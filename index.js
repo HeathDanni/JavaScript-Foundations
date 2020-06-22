@@ -120,14 +120,107 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
 
+// const variableInterestRate = (P, I, N) => {
+//   let principal = P;
+//   let interestRate = I - 0.02;
+//   let years = N;
+//   let name = "Heather";
+  
+
+//   for (let i = 0; i < 10; i++) {
+
+//     let monthlyInterestRate = interestRate/12;
+//     let periods = years * 12;
+//     let n1 = Math.pow(1 + monthlyInterestRate, periods);
+//     let numerator = principal * n1 * monthlyInterestRate;
+//     let denominator = (n1 - 1);
+//     let monthlyRate = numerator/denominator;
+   
+//     console.log(`${name}, with an interest rate of ${Math.round( 1000* (interestRate)) / 1000}, your monthly rate is $${Math.round(monthlyRate)}`);
+
+//     interestRate = interestRate + 0.005;
+//   }
+// }
+
+// variableInterestRate(200000, 0.04, 30);
+  
+
+// 🌟🌟🌟 STRETCH 🌟🌟🌟//
+
+/* Attempt any of the stretch goals below once you have finished the work above. Remember as always, these may require additional research beyond what you learned today */
+
+/*  🏡 Add  `Property Tax`, `Homeowner's insurance` and `HOA fees` as parameters in your function to calculate total monthly spending on housing */
+
+// const housingExpenseCaculator = (P, I, N, T, HI, HOA) => {
+//   let principal = P;
+//   let interestRate = I - 0.02;
+//   let years = N;
+//   let name = "Heather";
+  
+
+//   for (let i = 0; i < 10; i++) {
+
+//     let monthlyInterestRate = interestRate/12;
+//     let periods = years * 12;
+//     let n1 = Math.pow(1 + monthlyInterestRate, periods);
+//     let numerator = principal * n1 * monthlyInterestRate;
+//     let denominator = (n1 - 1);
+//     let monthlyRate = numerator/denominator;
+//     let taxes = (principal * (T/100)/12);
+//     let totalMonthlyRate = monthlyRate + taxes + + HI + HOA;
+
+//     console.log(`${name}, with an interest rate of ${Math.round( 1000* (interestRate)) / 1000}, a tax rate of ${T}%, homeowner's insurance at $${HI}, and an HOA due of $${HOA} your total monthly housing expenses are $${Math.round(totalMonthlyRate)}`);
+
+//     interestRate = interestRate + 0.005;
+//   }
+// }
+
+// housingExpenseCaculator(200000, 0.04, 30, 1, 100, 200);
+  
+/* 🏡 Build a calculator function that accepts `monthly payment` and `interest rate` and returns the maximum loan that a person could afford */
+
+// const maxLoanCaculator = (monthlyP, I, N) => {
+
+//   let yearlyP = (monthlyP * 12);
+//   let P = (yearlyP - (yearlyP * (I/100))) * N;
+
+//   return `With a monthly payment of $${monthlyP} for $${N} at an in interest rate of ${I}%, your maximum loan you can afford is $${P}`
+// }
+/* This did not seem to bring the correct answer. Seems to be more than what the principal loan would be.*/
+
+// console.log(maxLoanCaculator());
+
+/* 🏡 Explore using `window.prompt()` to allow a user to input parameters in the browser */
+
+// const mortgageCalculator = () => {
+
+//   let name = prompt(`What is your name?`)
+//   let principal = prompt(`What is the principal of your loan?`);
+//   let interestRate = prompt(`What is the interest on your loan?`);
+//   let years = prompt(`What is the length of your loan?`);
+
+//   let monthlyInterestRate = interestRate/12;
+//   let periods = years * 12;
+//   let n1 = Math.pow(1 + monthlyInterestRate, periods);
+//   let numerator = principal * n1 * monthlyInterestRate;
+//   let denominator = (n1 - 1);
+//   let monthlyRate = numerator/denominator;
+
+//     return `${name}, your monthly rate is ${monthlyRate}`;
+//   }
+
+//   console.log(mortgageCalculator());
+
+/* 🏡  Refactor your `variableInterestRate()` function to accept an array of interest rates (make sure to copy and paste as to not lose your work!) */
+
 const variableInterestRate = (P, I, N) => {
+  
   let principal = P;
-  let interestRate = I - 0.02;
+  let interestRate = I[0];
   let years = N;
   let name = "Heather";
   
-
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < (I.length); i++) {
 
     let monthlyInterestRate = interestRate/12;
     let periods = years * 12;
@@ -138,32 +231,8 @@ const variableInterestRate = (P, I, N) => {
    
     console.log(`${name}, with an interest rate of ${Math.round( 1000* (interestRate)) / 1000}, your monthly rate is $${Math.round(monthlyRate)}`);
 
-    interestRate = interestRate + 0.005;
+    interestRate = I[i + 1];
   }
 }
 
-variableInterestRate(200000, 0.04, 30);
-  
-
-// 🌟🌟🌟 STRETCH 🌟🌟🌟//
-
-/* Attempt any of the stretch goals below once you have finished the work above. Remember as always, these may require additional research beyond what you learned today */
-
-/*  🏡 Add  `Property Tax`, `Homeowner's insurance` and `HOA fees` as parameters in your function to calculate total monthly spending on housing */
-
-
-/* 🏡 Build a calculator function that accepts `monthly payment` and `interest rate` and returns the maximum loan that a person could afford */
-
-
-/* 🏡 Explore using `window.prompt()` to allow a user to input parameters in the browser */
-
-
-/* 🏡  Refactor your `variableInterestRate()` function to accept an array of interest rates (make sure to copy and paste as to not lose your work!) */
-
-
-
-
-
-
-
-
+variableInterestRate(200000, [0.02, 0.025, 0.09], 30);
