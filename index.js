@@ -57,14 +57,11 @@ mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
 
 // const mortgageCalculator = (P, I, N) => {
-//   let principal = P;
-//   let interestRate = I;
-//   let years = N;
 //   let name = "Heather";
-//   let monthlyInterestRate = interestRate/12;
-//   let periods = years * 12;
+//   let monthlyInterestRate = I/12;
+//   let periods = N * 12;
 //   let n1 = Math.pow(1 + monthlyInterestRate, periods);
-//   let numerator = principal * n1 * monthlyInterestRate;
+//   let numerator = P * n1 * monthlyInterestRate;
 //   let denominator = (n1 - 1);
 //   let monthlyRate = numerator/denominator;
 
@@ -80,14 +77,11 @@ Then, add control flow within your function such that IF creditScore is above 74
 Hint: To drop an interest rate by 5% you can take monthlyRate and multiply it by 0.95. Similarly, to increase an interest rate by 5% you'd do monthlyRate * 1.05. 
 */
 //  const mortgageCalculator = (P, I, N, creditScore) => {
-//     let principal = P;
-//     let interestRate = I;
-//     let years = N;
 //     let name = "Heather";
-//     let monthlyInterestRate = interestRate/12;
-//     let periods = years * 12;
+//     let monthlyInterestRate = I/12;
+//     let periods = N * 12;
 //     let n1 = Math.pow(1 + monthlyInterestRate, periods);
-//     let numerator = principal * n1 * monthlyInterestRate;
+//     let numerator = P * n1 * monthlyInterestRate;
 //     let denominator = (n1 - 1);
 //     let monthlyRate = numerator/denominator;
 
@@ -121,18 +115,16 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 */
 
 // const variableInterestRate = (P, I, N) => {
-//   let principal = P;
+
 //   let interestRate = I - 0.02;
-//   let years = N;
 //   let name = "Heather";
   
-
 //   for (let i = 0; i < 10; i++) {
 
 //     let monthlyInterestRate = interestRate/12;
-//     let periods = years * 12;
+//     let periods = N * 12;
 //     let n1 = Math.pow(1 + monthlyInterestRate, periods);
-//     let numerator = principal * n1 * monthlyInterestRate;
+//     let numerator = P * n1 * monthlyInterestRate;
 //     let denominator = (n1 - 1);
 //     let monthlyRate = numerator/denominator;
    
@@ -213,26 +205,26 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 
 /* 🏡  Refactor your `variableInterestRate()` function to accept an array of interest rates (make sure to copy and paste as to not lose your work!) */
 
-const variableInterestRate = (P, I, N) => {
+// const variableInterestRate = (P, I, N) => {
   
-  let principal = P;
-  let interestRate = I[0];
-  let years = N;
-  let name = "Heather";
+//   let principal = P;
+//   let interestRate = I[0];
+//   let years = N;
+//   let name = "Heather";
   
-  for (let i = 0; i < (I.length); i++) {
+//   for (let i = 0; i < (I.length); i++) {
 
-    let monthlyInterestRate = interestRate/12;
-    let periods = years * 12;
-    let n1 = Math.pow(1 + monthlyInterestRate, periods);
-    let numerator = principal * n1 * monthlyInterestRate;
-    let denominator = (n1 - 1);
-    let monthlyRate = numerator/denominator;
+//     let monthlyInterestRate = interestRate/12;
+//     let periods = years * 12;
+//     let n1 = Math.pow(1 + monthlyInterestRate, periods);
+//     let numerator = principal * n1 * monthlyInterestRate;
+//     let denominator = (n1 - 1);
+//     let monthlyRate = numerator/denominator;
    
-    console.log(`${name}, with an interest rate of ${Math.round( 1000* (interestRate)) / 1000}, your monthly rate is $${Math.round(monthlyRate)}`);
+//     console.log(`${name}, with an interest rate of ${Math.round( 1000* (interestRate)) / 1000}, your monthly rate is $${Math.round(monthlyRate)}`);
 
-    interestRate = I[i + 1];
-  }
-}
+//     interestRate = I[i + 1];
+//   }
+// }
 
-variableInterestRate(200000, [0.02, 0.025, 0.09], 30);
+// variableInterestRate(200000, [0.02, 0.025, 0.09], 30);
